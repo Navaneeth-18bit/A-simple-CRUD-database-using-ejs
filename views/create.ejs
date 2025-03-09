@@ -29,6 +29,35 @@
             </div>
         </form>
     </div>
+    <hr>
     
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Student ID      
+                    </th>
+                    <th>
+                        Student Name
+                    </th>
+                    <th>
+                        Room No
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% hostel.forEach((hostel) => {%>
+                    <tr>
+                        <td><%= hostel.student_id %></td>
+                        <td><%= hostel.student_name %></td>
+                        <td><%= hostel.room_no %></td>
+                        
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

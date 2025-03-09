@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Update Data</title>
 </head>
 <body>
-    <div class="container">
-    <h1>CRUD Operation</h1>
-    <div>
-    <button onclick="window.location.href='/Create'">+Add Data</button>
-    </div>
+    <h1>Enter or Update Data</h1>
 
-    <div>
-    <button onclick="window.location.href='/Update'">Read Data</button>
-    </div>
+    <!-- Form for adding new data -->
+    <form id="dataForm" action="/update-data" method="POST">
+        <div>
+        <label for="Student_ID">Student_ID:</label>
+        <input type="text" id="Student_ID" Student_ID="Student_ID" ><br><br>
+        </div>
 
-    <div>
-    <button onclick="window.location.href='/Delete'">Delete Data</button>
-    </div>
-    </div>
-    <hr>
+        <div>
+        <label for="student_name">student_name:</label>
+        <input type="text" id="student_name" Student_ID="student_name" ><br><br>
+        </div>
+
+        <div>
+            <label for="romm_no">Room No:</label>
+            <input type="number" name="room_no" id="room_no">
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
 
     <div>
         <table>
@@ -51,7 +56,6 @@
             </tbody>
         </table>
     </div>
-
 
 
 </body>

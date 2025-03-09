@@ -16,6 +16,29 @@ app.set('view engine', 'ejs')
 
 app.use(bodyParser.urlencoded({extended: true}))
 
+app.get('/',async(req,res) => {
+
+    const hostel = await Hostel.find()
+    res.render('index', {hostel})
+})
+
+app.get('/create',async(req,res) => {
+
+    const hostel = await Hostel.find()
+    res.render('create', {hostel})
+})
+
+app.get('/update',async(req,res) => {
+
+    const hostel = await Hostel.find()
+    res.render('update', {hostel})
+})
+
+app.get('/delete',async(req,res) => {
+
+    const hostel = await Hostel.find()
+    res.render('delete', {hostel})
+})
 
 
 app.listen((port), () => {
@@ -54,3 +77,18 @@ app.post('/save',async(req,res) => {
     
 })
 
+
+async function updateDocument()
+{
+    const client = new MongoClient('mongodb://localhost:27017/hosteldb');
+    const database = client.db('hosteldb');
+    const collection = database.collection('hostel');
+
+    const filter = { student_id: '1' };
+    const updateDoc = {
+        $set: {
+            student_name: 'Amit',
+            room_no: 101
+        },
+    };
+}
